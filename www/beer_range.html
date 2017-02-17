@@ -18,14 +18,14 @@
         <div class="card-content brown lighten-2">
         <span class="card-title activator white-text">{{birra.name}}<i class="material-icons right">more_vert</i></span>
         <p class="white-text">ABV</p>
-        <p class="white-text"><i class="material-icons">vertical_align_bottom</i>{{birra.abvMin}% &nbsp;&nbsp;&nbsp;<i class="material-icons">vertical_align_top</i>{{birra.abvMax}}%</p>
+        <p class="white-text"><i class="material-icons">vertical_align_bottom</i>{{birra.abvMin|| '0'}}% &nbsp;&nbsp;&nbsp;<i class="material-icons">vertical_align_top</i>{{birra.abvMax || '0'}}%</p>
         <p class="white-text">IBU</p>
-        <p class="white-text"><i class="material-icons">trending_down</i> {{birra.ibuMin}} &nbsp;&nbsp;&nbsp;<i class="material-icons">trending_up</i> {{birra.ibuMax}}</p>
+        <p class="white-text"><i class="material-icons">trending_down</i> {{birra.ibuMin|| '0'}} &nbsp;&nbsp;&nbsp;<i class="material-icons">trending_up</i> {{birra.ibuMax|| '0'}}</p>
 
         </div>
         <div class="card-reveal">
          <span class="card-title grey-text text-darken-4">{{birra.name}}<i class="material-icons right">close</i></span>
-        <p>{{birra.description}}</p>
+        <p>{{birra.description || ' '}}</p>
         </div>
   
 	</div> 
