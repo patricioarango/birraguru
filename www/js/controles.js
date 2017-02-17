@@ -35,6 +35,7 @@ aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http,$
        console.log('beerRangeCtrl');
         var ref = firebase.database().ref().child("data");
         $scope.birras = $firebaseArray(ref);
+        console.log($scope.birras);
       /*$http.get('birra_categorias.json').success(function(data){
         console.log(data);
         $scope.birras = data;
