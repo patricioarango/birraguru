@@ -33,13 +33,18 @@ aplicacion.controller('beerCtrl',['$scope','$location','$http', function($scope,
 aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http){
        //$scope.ventasActuales = registroCantidadVentas.list();
        console.log('beerRangeCtrl');
-        
+        $scope.fields = [];
         //$(".card_contenedor").html("");
-        db.ref('/data').once('value').then(function(snapshot) {
+        db.ref('/data').once('value').limitToLast(10).then(function(snapshot) {
           console.log("snapshot.val()");
           console.log(snapshot.val());
+          /*var birras_todas = snapshot.val();
+          $.each(birras_todas, function(index, birras_mitad) {
+            $.each(birras_mitad, function(index, birras) {
+              
+            });  
+          });*/
           $scope.birras = snapshot.val();
-          
         });
       /*$http.get('birra_categorias.json').success(function(data){
         console.log(data);
