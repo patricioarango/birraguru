@@ -1,5 +1,5 @@
 
-aplicacion.controller('beerCtrl',['$scope','$location','$http', function($scope,$location,$http){
+aplicacion.controller('beerCtrl',['$scope', function($scope){
     console.log('beerCtrl');
     $scope.random_beer = function(){
       console.log("random_beer");
@@ -30,22 +30,11 @@ aplicacion.controller('beerCtrl',['$scope','$location','$http', function($scope,
     
   }]);
 
-aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http){
+aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http,$firebaseArray){
        //$scope.ventasActuales = registroCantidadVentas.list();
        console.log('beerRangeCtrl');
-        $scope.fields = [];
-        //$(".card_contenedor").html("");
-        db.ref('/data').endAt(10).then(function(snapshot) {
-          console.log("snapshot.val()");
-          console.log(snapshot.val());
-          /*var birras_todas = snapshot.val();
-          $.each(birras_todas, function(index, birras_mitad) {
-            $.each(birras_mitad, function(index, birras) {
-              
-            });  
-          });*/
-          $scope.birras = snapshot.val();
-        });
+        var ref = firebase.database().ref().child("data");
+        $scope.birras = $firebaseArray(ref);
       /*$http.get('birra_categorias.json').success(function(data){
         console.log(data);
         $scope.birras = data;

@@ -40,17 +40,6 @@ var app = {
     }
 };
 
-
-var config = {
-    apiKey: "AIzaSyD-daeuugjyDAB_wx_wUkOj1S_L-lABuBw",
-    authDomain: "burgerrt-d207a.firebaseapp.com",
-    databaseURL: "https://burgerrt-d207a.firebaseio.com",
-    storageBucket: "burgerrt-d207a.appspot.com",
-    messagingSenderId: "250883101380"
-  };
-  var appfire = firebase.initializeApp(config);
-  var db = appfire.database();
-
 function redondear(data){
   if (data == null){
     return 0;
