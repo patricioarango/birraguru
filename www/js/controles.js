@@ -35,7 +35,7 @@ aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http){
        console.log('beerRangeCtrl');
         $scope.fields = [];
         //$(".card_contenedor").html("");
-        db.ref('/data').once('value').limitToLast(10).then(function(snapshot) {
+        db.ref('/data').once('value').endAt(10).then(function(snapshot) {
           console.log("snapshot.val()");
           console.log(snapshot.val());
           /*var birras_todas = snapshot.val();
