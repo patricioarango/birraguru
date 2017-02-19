@@ -8,7 +8,7 @@
   firebase.initializeApp(config);
   var db = firebase.database();
 
- var aplicacion = angular.module('App', ['ngRoute','ngAnimate','firebase']);
+ var aplicacion = angular.module('App', ['ngRoute','ngAnimate']);
  aplicacion.config(function ($compileProvider){
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     }).config(function ($routeProvider) {

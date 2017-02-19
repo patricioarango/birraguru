@@ -31,15 +31,12 @@ aplicacion.controller('beerCtrl',['$scope', function($scope){
   }]);
 
 aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http,$firebaseArray){
-       //$scope.ventasActuales = registroCantidadVentas.list();
-       console.log('beerRangeCtrl');
-        var ref = firebase.database().ref().child("data");
-        $scope.birras = $firebaseArray(ref);
-        console.log($scope.birras);
-      /*$http.get('birra_categorias.json').success(function(data){
-        console.log(data);
+      $scope.searchFish  = '';     // set the default search/filter term
+      $("#guru_nav").css("padding-bottom","0px");
+      $http.get('birra_categorias.json').success(function(data){
+        //console.log(data);
         $scope.birras = data;
-      });*/
+      });
           
 }]);
 
@@ -63,7 +60,6 @@ function show_card(card){
         '</div>'+
         '</div>');      
     } 
-
 
 
 

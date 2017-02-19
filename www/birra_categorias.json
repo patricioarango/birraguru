@@ -1,5 +1,4 @@
-{
-  "data" : [ {
+[ {
     "abvMax" : "5.5",
     "abvMin" : "4.5",
     "category" : {
@@ -3344,4 +3343,4 @@
     "name" : "Wild Beer",
     "shortName" : "Wild Beer"
   } ]
-}
+
