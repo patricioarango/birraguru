@@ -30,14 +30,14 @@ aplicacion.controller('beerCtrl',['$scope', function($scope){
     
   }]);
 
-aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http,$firebaseArray){
+aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http){
       $scope.searchFish  = '';     // set the default search/filter term
+      $scope.ibuMaximo = 41;
       $("#guru_nav").css("padding-bottom","0px");
+      
       $http.get('birra_categorias.json').success(function(data){
-        //console.log(data);
         $scope.birras = data;
       });
-          
 }]);
 
 function show_card(card){
@@ -46,13 +46,12 @@ function show_card(card){
       var mensaje_trasero = card.description;
       
       $(".card_contenedor").append('<div class="card">'+
-        '<div class="card-content brown lighten-2">'+
-        '<span class="card-title activator white-text">'+titulo+'<i class="material-icons right">more_vert</i></span>'+
-        '<p class="white-text">ABV</p>'+
-        '<p class="white-text"><i class="material-icons">vertical_align_bottom</i> '+redondear(card.abvMin)+'% &nbsp;&nbsp;&nbsp;<i class="material-icons">vertical_align_top</i> '+redondear(card.abvMax)+'%</p>'+
-        '<p class="white-text">IBU</p>'+
-        '<p class="white-text"><i class="material-icons">trending_down</i> '+redondear(card.ibuMin)+' &nbsp;&nbsp;&nbsp;<i class="material-icons">trending_up</i> '+redondear(card.ibuMax)+'</p>'+
-
+        '<div class="card-content teal">'+
+        '<span class="card-title activator white-text">'+titulo+'<i class="material-icons right">add</i></span>'+
+        '</div>'+
+        '<div class="card-action teal">'+
+        '<a><span style="font-size:1.1em;">ABV</span> <i class="material-icons">vertical_align_bottom</i> '+redondear(card.abvMin)+'%<i class="material-icons">vertical_align_top</i> '+redondear(card.abvMax)+'%</a>'+
+        '<a><span style="font-size:1.1em;">IBU</span> <i class="material-icons">trending_down</i> '+redondear(card.ibuMin)+'<i class="material-icons">trending_up</i> '+redondear(card.ibuMax)+'</a>'+
         '</div>'+
         '<div class="card-reveal">'+
         ' <span class="card-title grey-text text-darken-4">'+titulo+'<i class="material-icons right">close</i></span>'+

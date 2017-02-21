@@ -1,8 +1,8 @@
   <nav>
     <div class="nav-wrapper">
       <form>
-        <div class="input-field">
-          <input id="search" type="search" ng-model="searchFish" style="margin-top:0px;padding-top:0px;">
+        <div class="input-field amber" style="margin-top:-1.8rem;">
+          <input id="search" type="search" ng-model="searchFish">
           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
@@ -11,13 +11,18 @@
   </nav>
 <div class="row">
 </div>  
-            <form action="#">
-    <p class="range-field">
-      <input type="range" id="test5" min="0" max="100" />
-    </p>
-  </form>
+<form action="#">
+  <p class="range-field">abvMAX: {{ui2.abvMax || '-'}}
+    <input type="range" id="test5" min="0" max="33" ng-model="ui2.abvMax" />
+  </p>
+</form>
+<form action="#">
+  <p class="range-field">ibuMAX: {{ui.ibuMax || '-'}}
+    <input type="range" id="test6" min="0" max="100" ng-model="ui.ibuMax"/>
+  </p>
+</form>
 <div class="row">
-	<div class="card" ng-repeat="birra in birras | filter:searchFish">
+	<div class="card" ng-repeat="birra in birras | filter:searchFish | filter:ui | filter:ui2">
         <div class="card-content teal">
         <span class="card-title activator white-text">{{birra.name}}<i class="material-icons right">add</i></span>
         </div>
