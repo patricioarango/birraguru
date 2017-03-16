@@ -2,14 +2,15 @@
 <widget id="com.patricioarango.birraguru" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>BirraGuru</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Tirá un nombre raro de birra y quedá como un campeón.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="patricioarango@gmail.com" href="http://autowikipedia.es">
+        Patricio Arango
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="permissions" value="none" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
