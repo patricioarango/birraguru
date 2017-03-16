@@ -17,6 +17,10 @@
               templateUrl : 'beer.html',
               controller  : 'beerCtrl'
           })
+        .when('/ayuda.html', {
+              templateUrl : 'ayuda.html',
+              controller  : 'ayudaCtrl'
+          })        
         .when('/beer_range.html', {
               templateUrl : 'beer_range.html',
               controller  : 'beerRangeCtrl'

@@ -38,8 +38,17 @@ aplicacion.controller('beerRangeCtrl',['$scope','$http', function($scope,$http){
       $http.get('birra_categorias.json').success(function(data){
         $scope.birras = data;
       });
+
+      $scope.abrir_modal = function(){
+        console.log("abrir");
+        $('#modal1').modal('open');
+      }
 }]);
 
+aplicacion.controller('ayudaCtrl',['$scope', function($scope){
+    console.log('ayudaCtrl');
+   
+  }]);
 function show_card(card){
       console.log("show_card");
       var titulo = card.name;
@@ -60,10 +69,7 @@ function show_card(card){
         '</div>');      
     } 
 
-$(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
-  });
+
 
 
 
